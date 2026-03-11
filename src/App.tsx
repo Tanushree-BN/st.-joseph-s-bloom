@@ -14,6 +14,7 @@ import NewsEvents from "./pages/NewsEvents";
 import Contact from "./pages/Contact";
 import MandatoryDisclosure from "./pages/MandatoryDisclosure";
 import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
           <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

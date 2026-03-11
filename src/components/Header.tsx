@@ -37,13 +37,13 @@ const Header = () => {
       <div className="gradient-primary hidden md:block">
         <div className="container-school flex items-center justify-between py-2 text-sm text-primary-foreground/90">
           <div className="flex items-center gap-6">
-            <a href="tel:+918181818181" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
+            <a href="tel:9448982159" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
               <Phone className="w-3.5 h-3.5" />
-              +91 81818 18181
+              9448982159
             </a>
-            <a href="mailto:info@stjosephps.edu.in" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
+            <a href="mailto:sjpschool.nrp@gmail.com" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
               <Mail className="w-3.5 h-3.5" />
-              info@stjosephps.edu.in
+              sjpschool.nrp@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-1.5 text-primary-foreground/70">
@@ -56,18 +56,14 @@ const Header = () => {
       {/* Main Navigation */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-card/95 backdrop-blur-md shadow-lg"
-            : "bg-card"
+          isScrolled ? "bg-card/95 backdrop-blur-md shadow-lg" : "bg-card"
         }`}
       >
         <div className="container-school flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-3 group">
             <img src={schoolLogo} alt="St Joseph Public School Logo" className="h-14 w-14 object-contain" />
             <div>
-              <h1 className="font-display text-lg font-bold text-primary leading-tight">
-                St Joseph Public School
-              </h1>
+              <h1 className="font-display text-lg font-bold text-primary leading-tight">St Joseph Public School</h1>
               <p className="text-xs text-muted-foreground font-body">Narasimharajapura, Karnataka</p>
             </div>
           </Link>
@@ -88,18 +84,12 @@ const Header = () => {
               </Link>
             ))}
             <Link to="/admin-login">
-              <Button variant="copper" size="sm" className="ml-2">
-                Login
-              </Button>
+              <Button variant="copper" size="sm" className="ml-2">Login</Button>
             </Link>
           </nav>
 
           {/* Mobile Toggle */}
-          <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            aria-label="Toggle menu"
-          >
+          <button className="lg:hidden p-2 text-foreground" onClick={() => setIsMobileOpen(!isMobileOpen)} aria-label="Toggle menu">
             {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
