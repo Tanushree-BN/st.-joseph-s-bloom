@@ -1,104 +1,83 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Linkedin, ChevronRight } from "lucide-react";
 import schoolLogo from "@/assets/school-logo.png";
+
+const values = [
+  "Solidarity",
+  "Faith in God",
+  "Nurturing the whole person",
+  "Mature Love and Respect",
+  "Love for justice and peace",
+  "Academic Excellence without compromise",
+];
 
 const Footer = () => {
   return (
     <footer className="gradient-primary text-primary-foreground">
       <div className="container-school py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* School Info */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* St Joseph */}
           <div>
+            <h3 className="font-display text-xl font-bold uppercase mb-5">St Joseph</h3>
             <div className="flex items-center gap-3 mb-4">
-              <img src={schoolLogo} alt="School Logo" className="h-12 w-12 object-contain brightness-200" />
+              <img src={schoolLogo} alt="School Logo" className="h-16 w-16 object-contain brightness-200" />
               <div>
-                <h3 className="font-display text-lg font-bold">St Joseph Public School</h3>
-                <p className="text-sm text-primary-foreground/70">CBSE Affiliated</p>
+                <p className="font-display text-lg font-bold">St Joseph Public School</p>
+                <p className="text-sm text-primary-foreground/70">ICSE Affiliated</p>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              Nurturing young minds with excellence in education, character building, and holistic development since 1995.
+              St. Joseph Public School is fully dedicated to St. Joseph our patron and guide who is an ever rejuvenating and excellent model for hard work and determination and a true icon who stands for justice and love.
             </p>
-            <div className="flex gap-3 mt-5">
-              {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Our Values */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4">Quick Links</h4>
+            <h3 className="font-display text-xl font-bold uppercase mb-5">Our Values</h3>
             <ul className="space-y-2.5">
-              {[
-                { label: "About School", path: "/about" },
-                { label: "Admissions", path: "/admissions" },
-                { label: "Academics", path: "/academics" },
-                { label: "Gallery", path: "/gallery" },
-                { label: "Mandatory Disclosure", path: "/mandatory-disclosure" },
-                { label: "Contact Us", path: "/contact" },
-              ].map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
+              {values.map((value, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-primary-foreground/80">
+                  <ChevronRight className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
+                  {value}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Details */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
-                Narasimharajapura, Chikkamagaluru District, Karnataka, India - 577134
+            <h3 className="font-display text-xl font-bold uppercase mb-5">Contact Details</h3>
+            <ul className="space-y-4">
+              <li className="text-sm text-primary-foreground/80">
+                <span className="font-semibold text-primary-foreground">Address :</span><br />
+                St Joseph Public School Narasimharajapura<br />
+                Deepti Circle, Nagalapura, Narasimharajapura,<br />
+                Chikmagalur dt. Karnataka – 577134
               </li>
-              <li>
-                <a href="tel:+918181818181" className="flex items-center gap-3 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                  +91 81818 18181
-                </a>
+              <li className="text-sm text-primary-foreground/80">
+                <span className="font-semibold text-primary-foreground">Contact Number : </span>
+                <a href="tel:9448982159" className="hover:text-primary-foreground transition-colors">9448982159</a>
               </li>
-              <li>
-                <a href="mailto:info@stjosephps.edu.in" className="flex items-center gap-3 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  <Mail className="w-4 h-4 shrink-0 text-secondary" />
-                  info@stjosephps.edu.in
-                </a>
+              <li className="text-sm text-primary-foreground/80">
+                <span className="font-semibold text-primary-foreground">Email : </span>
+                <a href="mailto:sjpschool.nrp@gmail.com" className="hover:text-primary-foreground transition-colors">sjpschool.nrp@gmail.com</a>
               </li>
             </ul>
-          </div>
-
-          {/* School Hours */}
-          <div>
-            <h4 className="font-display text-lg font-semibold mb-4">School Hours</h4>
-            <ul className="space-y-2.5 text-sm text-primary-foreground/80">
-              <li className="flex justify-between">
-                <span>Monday - Friday</span>
-                <span>8:00 AM - 3:30 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span>8:00 AM - 12:30 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span>Closed</span>
-              </li>
-            </ul>
-            <div className="mt-5 p-3 rounded-lg bg-primary-foreground/10">
-              <p className="text-xs text-primary-foreground/70">Office Hours</p>
-              <p className="text-sm font-medium">Mon - Sat: 8:00 AM - 4:00 PM</p>
+            <div className="flex gap-3 mt-5">
+              {[
+                { Icon: Instagram, href: "#" },
+                { Icon: Facebook, href: "#" },
+                { Icon: Youtube, href: "#" },
+                { Icon: Linkedin, href: "#" },
+              ].map(({ Icon, href }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
