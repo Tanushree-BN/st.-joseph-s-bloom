@@ -7,9 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
+import { addContactSubmission } from "@/lib/store";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,8 +18,9 @@ const Contact = () => {
       toast.error("Please fill in all required fields.");
       return;
     }
+    addContactSubmission(form);
     toast.success("Your message has been sent! We'll get back to you soon.");
-    setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    setForm({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -30,12 +32,11 @@ const Contact = () => {
           </ScrollReveal>
 
           <div className="grid lg:grid-cols-3 gap-10">
-            {/* Contact Info */}
             <ScrollReveal className="space-y-6">
               {[
-                { icon: MapPin, title: "Address", lines: ["St Joseph Public School", "Narasimharajapura, Chikkamagaluru", "Karnataka, India - 577134"] },
-                { icon: Phone, title: "Phone", lines: ["+91 81818 18181", "+91 82828 28282"] },
-                { icon: Mail, title: "Email", lines: ["info@stjosephps.edu.in", "admissions@stjosephps.edu.in"] },
+                { icon: MapPin, title: "Address", lines: ["St Joseph Public School", "Deepti Circle, Nagalapura", "Narasimharajapura, Chikmagalur dt.", "Karnataka – 577134"] },
+                { icon: Phone, title: "Phone", lines: ["9448982159"] },
+                { icon: Mail, title: "Email", lines: ["sjpschool.nrp@gmail.com"] },
                 { icon: Clock, title: "Office Hours", lines: ["Mon - Fri: 8:00 AM - 4:00 PM", "Saturday: 8:00 AM - 12:30 PM"] },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
@@ -52,7 +53,6 @@ const Contact = () => {
               ))}
             </ScrollReveal>
 
-            {/* Form */}
             <ScrollReveal delay={200} className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-6 sm:p-8 shadow-lg space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -64,13 +64,9 @@ const Contact = () => {
                     <label className="text-sm font-medium font-body mb-1.5 block">Email *</label>
                     <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" />
                   </div>
-                  <div>
+                  <div className="sm:col-span-2">
                     <label className="text-sm font-medium font-body mb-1.5 block">Phone</label>
                     <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+91 XXXXX XXXXX" />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium font-body mb-1.5 block">Subject</label>
-                    <Input value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="Admission Enquiry" />
                   </div>
                 </div>
                 <div>
@@ -84,18 +80,11 @@ const Contact = () => {
             </ScrollReveal>
           </div>
 
-          {/* Map */}
           <ScrollReveal className="mt-12">
             <div className="rounded-2xl overflow-hidden shadow-lg h-[400px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15536.84!2d75.51!3d13.61!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb!2sNarasimharajapura!5e0!3m2!1sen!2sin!4v1"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="School Location"
+                width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="School Location"
               />
             </div>
           </ScrollReveal>

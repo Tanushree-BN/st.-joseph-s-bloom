@@ -22,14 +22,22 @@ const PrincipalMessage = () => {
             <ScrollReveal delay={200} className="lg:col-span-2">
               <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
                 <p className="text-lg text-foreground font-medium italic font-display">
-                  "Education is the most powerful weapon which you can use to change the world."
+                  "My dear parents, teachers, students and well-wishers"
                 </p>
-                <p>Dear Parents and Students,</p>
-                <p>It gives me immense pleasure to welcome you to St Joseph Public School, Narasimharajapura. Our school stands as a testament to the transformative power of education in shaping the future of our children.</p>
-                <p>At St Joseph Public School, we believe that every child is blessed with unique talents and abilities. Our role as educators is to identify and nurture these talents, providing the right environment for their holistic development.</p>
-                <p>Our dedicated team of teachers works tirelessly to create an engaging learning environment that encourages critical thinking, creativity, and collaboration. We emphasize not just academic excellence but also character building, social responsibility, and physical fitness.</p>
-                <p>We invite parents to partner with us in this noble journey of nurturing the leaders of tomorrow. Together, we can make a meaningful difference in the lives of our children.</p>
-                <p className="font-semibold text-foreground">With warm regards,<br />Fr. Thomas Joseph<br />Principal, St Joseph Public School</p>
+                <p>
+                  It brings me immense joy and happiness to be a part of this great mission of educating and upbringing our little ones as true and responsible citizens of our great nation. As we all know well that the focus of the world is now towards the hub of knowledge so much so the possession of this web space highlights our quest to grow from better to the best in pursuit of knowledge. Let this site help teachers, students, and parents to track the happenings of the School.
+                </p>
+                <p>
+                  We live in an era of profound scientific explosions where people are inter-connected and networked. As we juggle the world in our fingertips today, we find ourselves in a cyber-era which connects us through 5G, Wi-Fi, Li-Fi technologies. The fact that we possess this web space highlights the reality of the standard and growth of our institution. As Pope Benedict XVI notes, media is a mixed blessing and it can develop a world consensus or culture. Let this initiative lead to a new culture focused on the central teaching of Jesus, loving, fostering, and educating humanity.
+                </p>
+                <p>
+                  As a Catholic school, we promote Christian values which provide an excellent foundation for later life. We care about each individual child and work hard to meet everyone's needs. We listen carefully and are committed to helping and supporting children and people around us who may need us in times of difficulty. We learn how to support our local and wider community and are aware of others' needs.
+                </p>
+                <p className="font-semibold text-foreground">
+                  With warm regards,<br />
+                  Fr. Thomas Joseph<br />
+                  Principal, St Joseph Public School
+                </p>
               </div>
             </ScrollReveal>
           </div>
