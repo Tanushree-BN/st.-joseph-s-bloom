@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-import principalImg from "@/assets/principal.jpg";
+import principalImg from "@/assets/img1/prin.jpg";
 
 const PrincipalMessage = () => {
   return (

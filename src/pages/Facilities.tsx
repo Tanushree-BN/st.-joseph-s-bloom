@@ -2,14 +2,26 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Microscope, Monitor, BookOpen, Dumbbell, Bus, Music, Palette, Brain, Swords, Theater, FlaskConical, Beaker, Atom, Building2 } from "lucide-react";
-import scienceLab from "@/assets/science-lab.jpg";
-import computerLab from "@/assets/computer-lab.jpg";
-import library from "@/assets/library.jpg";
-import sportsGround from "@/assets/sports-ground.jpg";
-import schoolBuilding from "@/assets/school-building.jpg";
-import studentsClassroom from "@/assets/students-classroom.jpg";
-import artClass from "@/assets/art-class.jpg";
-import annualDay from "@/assets/annual-day.jpg";
+import scienceLab from "@/assets/img1/st phy lab.jpg";
+import chemLab from "@/assets/img1/st chem lab.jpg";
+import bioLab from "@/assets/img1/bio lab.jpg";
+import computerLab from "@/assets/img1/st comp.jpg";
+import library from "@/assets/img1/st lib new.jpg";
+import sportsGround from "@/assets/img1/st playground.jpg";
+import schoolBuilding from "@/assets/img1/st build.jpg";
+import studentsClassroom from "@/assets/img1/classroom1.jpg";
+import artClass from "@/assets/img1/art1.jpg";
+import annualDay from "@/assets/img1/3.jpg";
+import miniAuditorium from "@/assets/img1/st mini aud.jpg";
+import conferenceRoom from "@/assets/img1/st con room.jpg";
+import karate from "@/assets/img1/karr.jpeg";
+import yoga from "@/assets/img1/yoga.jpg";
+import classicalDance from "@/assets/img1/dance.jpg";
+import carnaticMusic from "@/assets/img1/carnatic1.jpg";
+import abacus from "@/assets/img1/abacus.jpg";
+import transport from "@/assets/img1/bus.jpg";
+import vedic from "@/assets/img1/vedic.jpg";
+import smartBoard from "@/assets/img1/SmartBoard.jpg";
 
 const infrastructure = [
   { image: schoolBuilding, title: "Main Building" },
@@ -18,23 +30,23 @@ const infrastructure = [
 ];
 
 const allFacilities = [
-  { icon: Monitor, title: "Class Rooms with Smart Boards", image: studentsClassroom },
-  { icon: Brain, title: "Special Vedic Maths Training", image: computerLab },
-  { icon: Bus, title: "School Transport Facility", image: schoolBuilding },
+  { icon: Monitor, title: "Class Rooms with Smart Boards", image: smartBoard },
+  { icon: Brain, title: "Special Vedic Maths Training", image: vedic },
+  { icon: Bus, title: "School Transport Facility", image: transport },
   { icon: Monitor, title: "Computer Laboratory", image: computerLab },
-  { icon: Brain, title: "Abacus Coaching Classes", image: studentsClassroom },
+  { icon: Brain, title: "Abacus Coaching Classes", image: abacus },
   { icon: Palette, title: "Art and Craft Training", image: artClass },
-  { icon: Music, title: "Carnatic Music Training", image: annualDay },
-  { icon: Dumbbell, title: "Yoga Classes", image: sportsGround },
-  { icon: Theater, title: "Classical Dance Training", image: annualDay },
-  { icon: Swords, title: "Karate Coaching", image: sportsGround },
+  { icon: Music, title: "Carnatic Music Training", image: carnaticMusic },
+  { icon: Dumbbell, title: "Yoga Classes", image: yoga },
+  { icon: Theater, title: "Classical Dance Training", image: classicalDance },
+  { icon: Swords, title: "Karate Coaching", image: karate },
   { icon: BookOpen, title: "Library", image: library },
   { icon: Dumbbell, title: "Playground", image: sportsGround },
-  { icon: Building2, title: "Mini Auditorium", image: annualDay },
-  { icon: Building2, title: "Conference Room", image: studentsClassroom },
+  { icon: Building2, title: "Mini Auditorium", image: miniAuditorium },
+  { icon: Building2, title: "Conference Room", image: conferenceRoom },
   { icon: FlaskConical, title: "Physics Laboratory", image: scienceLab },
-  { icon: Beaker, title: "Chemistry Laboratory", image: scienceLab },
-  { icon: Atom, title: "Biology Laboratory", image: scienceLab },
+  { icon: Beaker, title: "Chemistry Laboratory", image: chemLab },
+  { icon: Atom, title: "Biology Laboratory", image: bioLab },
 ];
 
 const Facilities = () => {

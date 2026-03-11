@@ -1,0 +1,10 @@
+[26-Oct-2025 22:25:52 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 7
+[26-Oct-2025 22:25:52 UTC] PHP Warning:  session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 8
+[26-Oct-2025 22:25:57 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 7
+[26-Oct-2025 22:25:57 UTC] PHP Warning:  session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 8
+[26-Oct-2025 22:26:00 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 7
+[26-Oct-2025 22:26:00 UTC] PHP Warning:  session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 8
+[26-Oct-2025 22:26:06 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 7
+[26-Oct-2025 22:26:06 UTC] PHP Warning:  session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 8
+[26-Oct-2025 22:26:08 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 7
+[26-Oct-2025 22:26:08 UTC] PHP Warning:  session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active in /home2/ka476cisce/public_html/uploads/stu.php on line 8

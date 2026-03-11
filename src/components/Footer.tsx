@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Linkedin, ChevronRight } from "lucide-react";
-import schoolLogo from "@/assets/school-logo.png";
+import { Clock, Facebook, Instagram, Youtube, Linkedin, ChevronRight } from "lucide-react";
+import schoolLogo from "@/assets/images/logo.png";
+import stJoseph from "@/assets/images/joseph.jpg";
 
 const values = [
   "Solidarity",
@@ -11,26 +12,46 @@ const values = [
   "Academic Excellence without compromise",
 ];
 
+const timings = [
+  { day: "Monday – Friday", time: "8:00 AM – 4:00 PM" },
+  { day: "Saturday", time: "8:00 AM – 1:00 PM" },
+  { day: "Sunday", time: "Closed" },
+  { day: "Office Hours", time: "9:00 AM – 3:00 PM" },
+];
+
 const Footer = () => {
   return (
     <footer className="gradient-primary text-primary-foreground">
       <div className="container-school py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* St Joseph */}
+        {/* Top section: St Joseph image + school info */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10">
+          {/* St Joseph carrying Baby Jesus image */}
+          <div className="shrink-0 flex flex-col items-center gap-2">
+            <div className="w-28 h-36 rounded-xl overflow-hidden border-2 border-primary-foreground/20 shadow-lg bg-primary-foreground/10 flex items-center justify-center">
+              <img
+                src={stJoseph}
+                alt="St Joseph carrying Baby Jesus"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* School intro */}
           <div>
-            <h3 className="font-display text-xl font-bold uppercase mb-5">St Joseph</h3>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={schoolLogo} alt="School Logo" className="h-16 w-16 object-contain brightness-200" />
+            <div className="flex items-center gap-3 mb-3">
+              <img src={schoolLogo} alt="School Logo" className="h-14 w-14 object-contain brightness-200" />
               <div>
-                <p className="font-display text-lg font-bold">St Joseph Public School</p>
+                <p className="font-display text-xl font-bold">St Joseph Public School</p>
                 <p className="text-sm text-primary-foreground/70">ICSE Affiliated</p>
               </div>
             </div>
-            <p className="text-sm text-primary-foreground/80 leading-relaxed">
+            <p className="text-sm text-primary-foreground/80 leading-relaxed max-w-md">
               St. Joseph Public School is fully dedicated to St. Joseph our patron and guide who is an ever rejuvenating and excellent model for hard work and determination and a true icon who stands for justice and love.
             </p>
           </div>
+        </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Our Values */}
           <div>
             <h3 className="font-display text-xl font-bold uppercase mb-5">Our Values</h3>
@@ -44,8 +65,24 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Details */}
+          {/* School Timings */}
           <div>
+            <h3 className="font-display text-xl font-bold uppercase mb-5">School Timings</h3>
+            <ul className="space-y-3">
+              {timings.map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-primary-foreground/80">
+                  <Clock className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
+                  <div>
+                    <p className="font-semibold text-primary-foreground/90">{t.day}</p>
+                    <p>{t.time}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Details */}
+          <div className="lg:col-span-2">
             <h3 className="font-display text-xl font-bold uppercase mb-5">Contact Details</h3>
             <ul className="space-y-4">
               <li className="text-sm text-primary-foreground/80">
@@ -83,11 +120,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} St Joseph Public School. All rights reserved.
-          </p>
-          <div className="flex gap-6">
+        <div className="mt-12 pt-6 border-t border-primary-foreground/10 flex flex-col items-center justify-center gap-4 text-center">
+          <div className="flex flex-col gap-1 items-center">
+            <p className="text-sm text-primary-foreground/60">
+              Copyright © 2025 St Joseph Public School. All rights reserved.
+            </p>
+            <p className="text-sm text-primary-foreground/60">
+              Design & developed by <a href="https://www.mitrasoftwares.in/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline underline-offset-2">Mitra Softwares</a>
+            </p>
+          </div>
+          <div className="flex gap-6 justify-center">
             <Link to="/mandatory-disclosure" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
               Mandatory Disclosure
             </Link>

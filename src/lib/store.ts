@@ -31,15 +31,23 @@ export interface ContactSubmission {
 export interface AdmissionForm {
   id: string;
   studentName: string;
-  parentName: string;
+  gender: string;
+  dob: string;
+  nationality: string;
+  aadhaarNo: string;
+  religionCaste: string;
+  motherTongue: string;
+  bloodGroup: string;
+  fatherName: string;
+  motherName: string;
   email: string;
   phone: string;
-  dob: string;
   gradeApplying: string;
   address: string;
   previousSchool: string;
+  transportRequired: string;
   date: string;
-  status: "pending" | "reviewed" | "accepted" | "rejected";
+  status: "not-viewed" | "viewed";
 }
 
 const KEYS = {
@@ -91,32 +99,38 @@ export const deleteCategory = (cat: string) => {
 };
 
 // Gallery
-import schoolBuilding from "@/assets/school-building.jpg";
-import studentsClassroom from "@/assets/students-classroom.jpg";
-import scienceLab from "@/assets/science-lab.jpg";
-import libraryImg from "@/assets/library.jpg";
-import sportsGround from "@/assets/sports-ground.jpg";
-import annualDay from "@/assets/annual-day.jpg";
-import artClass from "@/assets/art-class.jpg";
-import computerLab from "@/assets/computer-lab.jpg";
+import schoolBuilding from "@/assets/img1/st build.jpg";
+import studentsClassroom from "@/assets/img1/classroom1.jpg";
+import scienceLab from "@/assets/img1/st chem lab.jpg";
+import libraryImg from "@/assets/img1/st lib new.jpg";
+import sportsGround from "@/assets/img1/st playground.jpg";
+import annualDay from "@/assets/img1/3.jpg";
+import artClass from "@/assets/img1/art1.jpg";
+import computerLab from "@/assets/img1/st comp.jpg";
+import danceImg from "@/assets/img1/dance.jpg";
+import yogaImg from "@/assets/img1/yoga.jpg";
+import abacusImg from "@/assets/img1/abacus.jpg";
+import carnaticImg from "@/assets/img1/carnatic1.jpg";
+import smartBoardImg from "@/assets/img1/SmartBoard.jpg";
+import bioLabImg from "@/assets/img1/bio lab.jpg";
 
 const defaultGallery: GalleryImage[] = [
   { id: "g1", src: schoolBuilding, category: "Campus", title: "School Building" },
   { id: "g2", src: studentsClassroom, category: "Academics", title: "Classroom Session" },
-  { id: "g3", src: scienceLab, category: "Academics", title: "Science Lab" },
+  { id: "g3", src: scienceLab, category: "Academics", title: "Physics/Chemistry Lab" },
   { id: "g4", src: libraryImg, category: "Academics", title: "Library" },
   { id: "g5", src: sportsGround, category: "Sports", title: "Sports Ground" },
   { id: "g6", src: annualDay, category: "Events", title: "Annual Day" },
   { id: "g7", src: artClass, category: "Activities", title: "Art Class" },
   { id: "g8", src: computerLab, category: "Academics", title: "Computer Lab" },
-  { id: "g9", src: schoolBuilding, category: "Campus", title: "Main Campus" },
-  { id: "g10", src: studentsClassroom, category: "Cultural", title: "Cultural Event" },
-  { id: "g11", src: scienceLab, category: "Academics", title: "Chemistry Lab" },
-  { id: "g12", src: sportsGround, category: "Sports", title: "Athletics Track" },
-  { id: "g13", src: annualDay, category: "Events", title: "Prize Distribution" },
-  { id: "g14", src: artClass, category: "NSS", title: "NSS Camp" },
-  { id: "g15", src: computerLab, category: "Academics", title: "Digital Learning" },
-  { id: "g16", src: libraryImg, category: "Academics", title: "Reading Hour" },
+  { id: "g9", src: danceImg, category: "Cultural", title: "Classical Dance" },
+  { id: "g10", src: yogaImg, category: "Sports", title: "Yoga Session" },
+  { id: "g11", src: carnaticImg, category: "Cultural", title: "Carnatic Music" },
+  { id: "g12", src: abacusImg, category: "Academics", title: "Abacus Training" },
+  { id: "g13", src: smartBoardImg, category: "Academics", title: "Smart Classroom" },
+  { id: "g14", src: bioLabImg, category: "Academics", title: "Biology Lab" },
+  { id: "g15", src: schoolBuilding, category: "Campus", title: "Main Campus" },
+  { id: "g16", src: annualDay, category: "Events", title: "Prize Distribution" },
 ];
 
 export const getGallery = (): GalleryImage[] => {
@@ -207,9 +221,13 @@ export const getAdmissions = (): AdmissionForm[] => get(KEYS.admissions, []);
 
 export const addAdmission = (form: Omit<AdmissionForm, "id" | "date" | "status">) => {
   const forms = getAdmissions();
-  const newForm = { ...form, id: `a_${Date.now()}`, date: new Date().toLocaleString(), status: "pending" as const };
+  const newForm = { ...form, id: `a_${Date.now()}`, date: new Date().toLocaleString(), status: "not-viewed" as const };
   set(KEYS.admissions, [newForm, ...forms]);
   return newForm;
+};
+
+export const markAdmissionViewed = (id: string) => {
+  set(KEYS.admissions, getAdmissions().map(a => a.id === id ? { ...a, status: "viewed" as const } : a));
 };
 
 export const updateAdmissionStatus = (id: string, status: AdmissionForm["status"]) => {

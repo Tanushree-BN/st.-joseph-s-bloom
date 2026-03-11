@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock, User } from "lucide-react";
 import { toast } from "sonner";
-import schoolLogo from "@/assets/school-logo.png";
+import schoolLogo from "@/assets/images/logo.png";
 import { adminLogin, isAdminLoggedIn, adminLogout } from "@/lib/store";
 
 const AdminLogin = () => {

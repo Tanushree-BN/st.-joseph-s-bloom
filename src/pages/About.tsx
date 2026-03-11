@@ -2,8 +2,8 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Target, Eye, BookOpen } from "lucide-react";
-import schoolBuilding from "@/assets/school-building.jpg";
-import studentsClassroom from "@/assets/students-classroom.jpg";
+import schoolBuilding from "@/assets/img1/st build.jpg";
+import studentsClassroom from "@/assets/img1/classroom1.jpg";
 
 const topConcerns = [
   "Class rooms with smart boards",

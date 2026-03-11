@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-import schoolBuilding from "@/assets/school-building.jpg";
-import studentsClassroom from "@/assets/students-classroom.jpg";
-import scienceLab from "@/assets/science-lab.jpg";
-import library from "@/assets/library.jpg";
-import sportsGround from "@/assets/sports-ground.jpg";
-import annualDay from "@/assets/annual-day.jpg";
-import artClass from "@/assets/art-class.jpg";
-import computerLab from "@/assets/computer-lab.jpg";
+import schoolBuilding from "@/assets/img1/st build.jpg";
+import studentsClassroom from "@/assets/img1/classroom1.jpg";
+import scienceLab from "@/assets/img1/st chem lab.jpg";
+import library from "@/assets/img1/st lib new.jpg";
+import sportsGround from "@/assets/img1/st playground.jpg";
+import annualDay from "@/assets/img1/3.jpg";
+import artClass from "@/assets/img1/art1.jpg";
+import computerLab from "@/assets/img1/st comp.jpg";
 
 const heroSlides = [
   { image: schoolBuilding, title: "Welcome to St Joseph Public School", subtitle: "Nurturing Minds, Building Futures", cta: "Explore Our School" },

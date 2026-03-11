@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import schoolLogo from "@/assets/school-logo.png";
+import schoolLogo from "@/assets/images/logo.png";
 
 const navItems = [
   { label: "Home", path: "/" },

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { BookOpen, Calculator, FlaskConical, Globe, Palette, Dumbbell } from "lucide-react";
-import studentsClassroom from "@/assets/students-classroom.jpg";
+import studentsClassroom from "@/assets/img1/classroom1.jpg";
 
 const programs = [
   { icon: BookOpen, title: "Primary (I-V)", subjects: ["English", "Hindi", "Kannada", "Mathematics", "EVS", "Computer Science", "Art & Craft"] },
