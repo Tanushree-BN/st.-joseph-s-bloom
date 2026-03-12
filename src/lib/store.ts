@@ -113,6 +113,12 @@ import abacusImg from "@/assets/img1/abacus.jpg";
 import carnaticImg from "@/assets/img1/carnatic1.jpg";
 import smartBoardImg from "@/assets/img1/SmartBoard.jpg";
 import bioLabImg from "@/assets/img1/bio lab.jpg";
+import mathLabImg from "@/assets/img1/math.jpg";
+import vedicClassImg from "@/assets/img1/vedic.jpg";
+import schoolBusImg from "@/assets/img1/bus.jpg";
+import physicsLabImg from "@/assets/img1/st phy lab.jpg";
+import conferenceRoomImg from "@/assets/img1/st con room.jpg";
+import miniAuditoriumImg from "@/assets/img1/st mini aud.jpg";
 
 const defaultGallery: GalleryImage[] = [
   { id: "g1", src: schoolBuilding, category: "Campus", title: "School Building" },
@@ -131,6 +137,12 @@ const defaultGallery: GalleryImage[] = [
   { id: "g14", src: bioLabImg, category: "Academics", title: "Biology Lab" },
   { id: "g15", src: schoolBuilding, category: "Campus", title: "Main Campus" },
   { id: "g16", src: annualDay, category: "Events", title: "Prize Distribution" },
+  { id: "g17", src: mathLabImg, category: "Academics", title: "Mathematics Activity" },
+  { id: "g18", src: vedicClassImg, category: "Activities", title: "Vedic Learning Session" },
+  { id: "g19", src: schoolBusImg, category: "Campus", title: "School Transport" },
+  { id: "g20", src: physicsLabImg, category: "Academics", title: "Physics Lab" },
+  { id: "g21", src: conferenceRoomImg, category: "Campus", title: "Conference Room" },
+  { id: "g22", src: miniAuditoriumImg, category: "Events", title: "Mini Auditorium" },
 ];
 
 export const getGallery = (): GalleryImage[] => {
@@ -139,6 +151,15 @@ export const getGallery = (): GalleryImage[] => {
     set(KEYS.gallery, defaultGallery);
     return defaultGallery;
   }
+
+  const existingIds = new Set(stored.map(img => img.id));
+  const missingDefaults = defaultGallery.filter(img => !existingIds.has(img.id));
+  if (missingDefaults.length > 0) {
+    const merged = [...stored, ...missingDefaults];
+    set(KEYS.gallery, merged);
+    return merged;
+  }
+
   return stored;
 };
 

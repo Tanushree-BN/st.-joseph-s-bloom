@@ -7,7 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
-import { Image as ImageIcon, Newspaper, Mail, GraduationCap, Plus, Trash2, Edit2, Eye, LogOut, Check, X, Calendar, Upload } from "lucide-react";
+import { Image as ImageIcon, Newspaper, Mail, GraduationCap, Plus, Trash2, Edit2, Eye, LogOut, Check, X, Calendar, Upload, FileDown } from "lucide-react";
+import { jsPDF } from "jspdf";
 import {
   isAdminLoggedIn, adminLogout,
   getGallery, addGalleryImage, updateGalleryImage, deleteGalleryImage,
@@ -67,7 +68,13 @@ const AdminDashboard = () => {
     updateGalleryImage(editGallery.id, editGallery);
     refreshData(); setEditGallery(null); toast.success("Updated!");
   };
-  const handleDeleteGallery = (id: string) => { deleteGalleryImage(id); refreshData(); toast.success("Deleted!"); };
+  const handleDeleteGallery = (id: string) => {
+    const confirmed = window.confirm("Are you sure you want to delete this image?");
+    if (!confirmed) return;
+    deleteGalleryImage(id);
+    refreshData();
+    toast.success("Deleted!");
+  };
 
   // News handlers
   const handleAddNews = () => {
@@ -95,6 +102,54 @@ const AdminDashboard = () => {
 
   // Helper: parse admission date string to Date
   const parseAdmissionDate = (dateStr: string) => new Date(dateStr);
+
+  const downloadAdmissionPdf = (admission: AdmissionForm) => {
+    const doc = new jsPDF();
+    const left = 15;
+    let y = 18;
+
+    doc.setFontSize(16);
+    doc.text("St Joseph Public School - Admission Application", left, y);
+    y += 8;
+    doc.setFontSize(11);
+
+    const rows: Array<[string, string]> = [
+      ["Student Name", admission.studentName],
+      ["Gender", admission.gender || "N/A"],
+      ["Date of Birth", admission.dob || "N/A"],
+      ["Nationality", admission.nationality || "N/A"],
+      ["Aadhaar No", admission.aadhaarNo || "N/A"],
+      ["Religion/Caste", admission.religionCaste || "N/A"],
+      ["Mother Tongue", admission.motherTongue || "N/A"],
+      ["Blood Group", admission.bloodGroup || "N/A"],
+      ["Father Name", admission.fatherName || "N/A"],
+      ["Mother Name", admission.motherName || "N/A"],
+      ["Email", admission.email || "N/A"],
+      ["Phone", admission.phone || "N/A"],
+      ["Grade Applying", admission.gradeApplying || "N/A"],
+      ["Address", admission.address || "N/A"],
+      ["Previous School", admission.previousSchool || "N/A"],
+      ["Transport Required", admission.transportRequired || "No"],
+      ["Submitted On", admission.date || "N/A"],
+      ["Status", admission.status],
+    ];
+
+    rows.forEach(([label, value]) => {
+      const line = `${label}: ${value}`;
+      const wrapped = doc.splitTextToSize(line, 180) as string[];
+      doc.text(wrapped, left, y);
+      y += wrapped.length * 6;
+
+      if (y > 275) {
+        doc.addPage();
+        y = 20;
+      }
+    });
+
+    const sanitizedName = admission.studentName.replace(/[^a-z0-9]/gi, "_").toLowerCase();
+    doc.save(`admission_${sanitizedName || admission.id}.pdf`);
+    toast.success("Admission PDF downloaded");
+  };
 
   const getFilteredAdmissions = () => {
     const now = new Date();
@@ -362,6 +417,7 @@ const AdminDashboard = () => {
                       </div>
                       <div className="flex gap-1 shrink-0">
                         <button onClick={() => { markAdmissionViewed(a.id); refreshData(); setViewAdmission(a); }} className="w-8 h-8 rounded-full bg-accent flex items-center justify-center hover:bg-accent/80" title="View"><Eye className="w-3 h-3" /></button>
+                        <button onClick={() => downloadAdmissionPdf(a)} className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20" title="Download PDF"><FileDown className="w-3 h-3 text-primary" /></button>
                         <button onClick={() => { deleteAdmission(a.id); refreshData(); toast.success("Deleted!"); }} className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center hover:bg-destructive/20"><Trash2 className="w-3 h-3 text-destructive" /></button>
                       </div>
                     </div>
@@ -567,6 +623,9 @@ const AdminDashboard = () => {
               <p><strong>Transport Required:</strong> {viewAdmission.transportRequired || "No"}</p>
               <p className="sm:col-span-2 text-xs text-muted-foreground mt-2 border-t pt-2"><strong>Submitted:</strong> {viewAdmission.date}</p>
             </div>
+            <Button variant="outline" className="mt-4 w-full" onClick={() => downloadAdmissionPdf(viewAdmission)}>
+              <FileDown className="w-4 h-4 mr-2" /> Download as PDF
+            </Button>
           </DialogContent>
         </Dialog>
       )}

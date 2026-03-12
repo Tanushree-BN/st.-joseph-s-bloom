@@ -14,7 +14,7 @@ const PrincipalMessage = () => {
           <div className="grid lg:grid-cols-3 gap-10 items-start">
             <ScrollReveal className="lg:col-span-1">
               <div className="text-center">
-                <img src={principalImg} alt="Principal" className="w-48 h-48 rounded-2xl object-cover mx-auto shadow-xl mb-4" />
+                <img src={principalImg} alt="Principal" className="w-56 h-64 rounded-2xl object-contain bg-accent/40 mx-auto shadow-xl mb-4 p-2" />
                 <h3 className="font-display text-xl font-semibold">Fr. Thomas Joseph</h3>
                 <p className="text-sm text-muted-foreground">Principal</p>
               </div>

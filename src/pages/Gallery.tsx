@@ -51,6 +51,8 @@ const Gallery = () => {
   };
 
   const handleDeleteImage = (id: string) => {
+    const confirmed = window.confirm("Are you sure you want to delete this image?");
+    if (!confirmed) return;
     deleteGalleryImage(id);
     setImages(getGallery());
     toast.success("Image deleted!");
