@@ -84,7 +84,7 @@ const Header = () => {
               </Link>
             ))}
             <Link to="/admin-login">
-              <Button variant="copper" size="sm" className="ml-2">Loginn</Button>
+              <Button variant="copper" size="sm" className="ml-2">Login</Button>
             </Link>
           </nav>
 
