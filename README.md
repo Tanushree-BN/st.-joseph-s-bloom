@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# St. Joseph's Bloom
 
-## Project info
+Welcome to the official web platform for St. Joseph's Bloom. This repository houses the frontend architecture and administrative dashboard for the school's website, delivering a modern, responsive, and interactive experience for students, parents, and administrators alike.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Features
 
-## How can I edit this code?
+### Public Portal
+- **Home & About**: Comprehensive overview of the institution, mission, and vision.
+- **Academics**: Details on the curriculum and academic programs.
+- **Facilities**: Information about the state-of-the-art campus facilities.
+- **Admissions**: Streamlined online admission process with digital form submissions.
+- **Gallery**: Visual showcase of campus life and events.
+- **News & Events**: Up-to-date announcements and calendar.
+- **Principal's Message**: Direct communication from the head of the institution.
+- **Mandatory Disclosures**: Essential regulatory and compliance information.
+- **Contact**: Reach out easily with forms and maps.
 
-There are several ways of editing your application.
+### Administrative Dashboard
+- **Admin Login**: Secure authentication for school administrators.
+- **Dashboard Management**: Centralized hub to manage admissions, website content, and events dynamically.
 
-**Use Lovable**
+## 🛠 Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+This project is built using modern web development standards to ensure high performance, maintainability, and accessibility:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend Framework**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
+- **State Management & Data Fetching**: [TanStack Query (React Query)](https://tanstack.com/query/latest)
+- **Form Handling**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
 
-**Use your preferred IDE**
+## 📦 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Ensure you have the following installed on your local machine:
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository:**
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd st.-joseph-s-bloom
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Open in Browser:**
+   Navigate to `http://localhost:5173` to view the application.
+
+## 📁 Project Structure
+
+```text
+st.-joseph-s-bloom/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/             # Images, fonts, etc.
+│   ├── components/         # Reusable UI components
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions and configurations
+│   ├── pages/              # Route components (Index, About, Admissions, etc.)
+│   ├── App.tsx             # Main application routing
+│   └── main.tsx            # Application entry point
+├── package.json            # Project dependencies and scripts
+├── tailwind.config.ts      # Tailwind CSS configuration
+├── vite.config.ts          # Vite build configuration
+└── README.md               # Project documentation
 ```
 
-**Edit a file directly in GitHub**
+## 📜 Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - Starts the development server with Hot Module Replacement (HMR).
+- `npm run build` - Builds the application for production.
+- `npm run lint` - Runs ESLint to check for code quality issues.
+- `npm run preview` - Previews the production build locally.
+- `npm test` - Runs Vitest test cases.
 
-**Use GitHub Codespaces**
+## 🤝 Contributing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+*Built with ❤️ for St. Joseph's Bloom.*
